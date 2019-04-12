@@ -1,0 +1,7 @@
+<apex:page docType="html-5.0" standardStylesheets="false" showheader="false" sidebar="false" standardController="Account">
+    <c:GeocodeComponentLocationSF1 recType="Account" 
+        standardAddress="BillingAddress"
+        displayfields="Phone,Type,AnnualRevenue,website"
+        maxResults="100" nearbyDistance="2"
+    />
+</apex:page>

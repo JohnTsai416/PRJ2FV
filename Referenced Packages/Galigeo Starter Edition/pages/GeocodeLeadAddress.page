@@ -1,0 +1,7 @@
+<apex:page showHeader="false" sidebar="false" standardController="Lead" docType="html-5.0">   
+    <c:GeocodeComponent recId="{!Lead.id}" recType="Lead" 
+        standardAddress="Address" 
+        displayfields="Phone,Email"
+        maxResults="500" nearbyDistance="10"
+    />
+</apex:page>

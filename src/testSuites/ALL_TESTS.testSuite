@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexTestSuite xmlns="http://soap.sforce.com/2006/04/metadata">
+    <testClassName>ChangePasswordControllerTest</testClassName>
+    <testClassName>ForgotPasswordControllerTest</testClassName>
+    <testClassName>getStatusCtlrExtensionTest</testClassName>
+    <testClassName>icControllerTest</testClassName>
+    <testClassName>icSOQLExtensionTest</testClassName>
+    <testClassName>icSubmitCtlrExtensionTest</testClassName>
+    <testClassName>LocationDetailsCtlrExtensionTest</testClassName>
+    <testClassName>MyProfilePageControllerTest</testClassName>
+    <testClassName>ReportTriggerTest</testClassName>
+    <testClassName>SiteLoginControllerTest</testClassName>
+    <testClassName>SiteRegisterControllerTest</testClassName>
+    <testClassName>SuggestionTriggerTest</testClassName>
+</ApexTestSuite>

@@ -1,0 +1,26 @@
+<apex:page controller="icController" lightningStylesheets="true" docType="html-5.0"
+           extensions="getStatusCtlrExtension">
+  <!--  <apex:stylesheet value="{!$Resource.icStyling}"/> -->
+    
+    <h1>
+        {!selectedLoc.LocationName__c}
+    </h1> 
+    <p>
+        {!selectedLoc.Address__c}
+    </p>
+    <apex:outputText id="error" value="{!error}" />
+	<div class="myTable">
+    <apex:form style="display:flex justify-content:center">
+        <apex:selectRadio value="{!vote}" title="vote now " styleClass="center">
+            <apex:selectOptions value="{!voteOptions}"/>
+        </apex:selectRadio> <p/> 
+        <!--<apex:input type="datetime" value="{!statusDT}" required="true" />-->
+        <apex:input type="date" value="{!statusDate}" />
+        <apex:input type="time" value="{!statusTime}" />
+        
+        <apex:commandButton action="{!submitPast}" value="Submit" reRender="error"/> <br />
+        <apex:commandButton value="Actually, I want to submit the status as of now" action="{!toStatusNow}"/>
+    </apex:form>
+    </div> 
+  <!--  <c.Footer /> -->
+</apex:page>

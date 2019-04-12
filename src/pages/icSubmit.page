@@ -1,0 +1,36 @@
+<apex:page controller="icController" lightningStylesheets="true" docType="html-5.0" standardStylesheets="false" extensions="icSubmitCtlrExtension">
+    <!--   <apex:stylesheet value="{!$Resource.icStyling}"/> -->
+    
+    <script>
+    .submitPageBlock{width:70%!important; display:inline-block!important;}
+    </script>
+    <h1>
+        Submit a New Location
+    </h1>
+    <apex:form style="text-align:center">
+        <apex:pageBlock >
+            <div class="submitPageBlock">
+                <apex:pageBlockSection title="Location Information" collapsible="false" >
+                    <apex:message for="zipValidation" />
+                    <apex:inputField value="{!sug.Street__c}" label="Street" />
+                    <apex:inputField value="{!sug.City__c}" label="City"/>
+                    <apex:inputField value="{!sug.State__c}" label="State"/>
+                    <apex:inputField value="{!sug.Country__c}" label="Country"/>
+                    <apex:inputField value="{!sug.Zip__c}" label="Zip" id="zipValidation"/>
+                </apex:pageBlockSection>
+            </div> 
+        </apex:pageBlock>
+        <div style="display:inline-block" >
+            <apex:commandLink action="{!toHome}" type="image/png">
+                <apex:image title="Cancel" value="{!$Resource.CancelButton}" width="200px" style="margin-right:30px"/>
+            </apex:commandlink>
+            <apex:commandLink action="{!submitLoc}" type="image/png">
+                <apex:image title="Suggest this location!" value="{!$Resource.SubmitNewLocationButton}" width="200px" style="margin-left:30px"/>
+            </apex:commandlink> 
+            
+        </div>
+        
+        
+    </apex:form>
+    <c:Footer /> 
+</apex:page>

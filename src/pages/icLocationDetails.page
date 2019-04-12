@@ -1,0 +1,42 @@
+<apex:page controller="icController" lightningStylesheets="true" docType="html-5.0" extensions="LocationDetailsCtlrExtension" >
+<apex:stylesheet value="{!$Resource.icStyling}"/>
+    
+ 	<h1 >
+        <apex:outputText value="{!dispLoc.LocationName__c}" /> 
+    </h1> 
+    <br />
+    <h2>
+        <apex:outputText style="align:center;" value="{!dispLoc.street__c}" /> <br />
+        <apex:outputText style="align:center;" value="{!dispLoc.city__c}" />,     <apex:outputText style="align:center;" value=" {!dispLoc.state__c}" />
+    </h2>
+     
+    <redLine /> <goldLine /> <redLine /> <br />
+    <div class="row">
+        <div class="column left" style="color:white;"> hiffg </div>
+        <div class="column middle">
+            <div class="description">
+                <h1>Most Recent Status Update</h1>
+                <apex:outputText value="{!lastLogDate}" />
+            </div> 
+        </div>
+        <div class="column middle"> 
+            
+            <!--STATUS FROM RECORD {!lastKnownStatus.Status__c}<br />-->
+            <!--<apex:image url="{!URLFOR(imgVar)}" width="200" height="200"/> -->
+            <apex:image url="{!statusImg}" width="200" height="200"/>
+        </div>
+        <div class="column right" style="color:white"> hgggi </div>
+    </div>
+    <!-- <apex:image url="{!$Resource.ThumbsDown}" width="200" height="200"/> -->
+    
+    <br /><redLine /> <goldLine /> <redLine /> <br />
+    <p>
+        Do you want to log a new status?
+    </p>
+    <div class="totalCenter">
+            <apex:form > <apex:commandButton action="{!goToStatusNow}" value="Log the current status" style="font-size:20pt"/> </apex:form>
+        </div>
+      
+
+ <c:Footer />   
+</apex:page>

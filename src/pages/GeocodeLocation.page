@@ -1,0 +1,17 @@
+<apex:page showHeader="false" sidebar="false" standardController="Location__c">
+    <ggo:GeocodeComponent recId="{!Location__c.id}" recType="Location__c" 
+                          street="street__c"        
+                          city="city__c"        
+                          postalCode="zipCode__c"        
+                          state="state__c"      
+                          
+                          geoLoc="geoloc__c"         
+                          normStreet="street__c"     
+                          normCity="city__c"        
+                          normPostalCode="zipCode__c"     
+                          normState="state__c"      
+                          
+                          
+                          displayFields="LocationName__c,street__c,city__c"
+                          maxResults="10" nearbyDistance="20" />
+</apex:page>

@@ -1,0 +1,40 @@
+<apex:page controller="icController" standardStylesheets="false">
+  <!--  <apex:stylesheet value="{!$Resource.icStyling}"/> -->
+    <h1>
+        McDonalds Reston
+    </h1> 
+    <p>
+        2028 Pungo Ridge Ct <br />
+        Virginia Beach, VA 23457
+    </p> 
+    <redLine /> <goldLine /> <redLine /> <br />
+    <div class="myTable">
+        <div class="column" style="color:white"> hiffg </div>
+        <div class="column">
+            <div class="description">
+                status of the ice cream machine as of may 
+            </div> 
+        </div>
+        <div class="column"> 
+            <apex:image url="{!$Resource.ThumbsUp}" width="200" height="200"/> 
+        </div>
+        <div class="column" style="color:white"> hgggi </div>
+    </div>
+    <!-- <apex:image url="{!$Resource.ThumbsDown}" width="200" height="200"/> -->
+    
+    <br /><redLine /> <goldLine /> <redLine /> <br />
+    <p>
+        Do you want to log a new status?
+    </p>
+    <div class="myTable">
+        <div class="column" style="color:white">hi</div>
+        <div class="column">
+            <apex:form > <apex:commandButton action="{!toStatusNow}" value="Log the current status"/> </apex:form>
+        </div>
+ 
+        <div class="column" style="color:white">hi</div>
+    </div>
+    <apex:form > <apex:commandButton action="{!toHome}" value="go home"/> </apex:form> 
+
+  <!--  <c.Footer /> -->
+</apex:page>

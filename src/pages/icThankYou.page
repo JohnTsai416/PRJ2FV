@@ -1,0 +1,25 @@
+<apex:page controller="icController" standardStylesheets="false">
+    <apex:stylesheet value="{!$Resource.icStyling}"/> 
+    <div style="text-align:center">
+       <h2 style="display:inline-block ">
+        Thank you for your devotion to keeping the public informed on the real issues!!
+        </h2> <br/>
+    <div style="display:inline-block">
+        <div class="flexColumn square" style="width:30%">
+            <a href="https://twitter.com/intent/tweet?button_hashtag=McDIceCreamStatusUp&ref_src=twsrc%5Etfw"
+            class="twitter-hashtag-button" data-text="I think the Ice cream machine is up!"
+            data-url="http://logacream-developer-edition.na91.force.com" data-show-count="false">
+            	#McDIceCreamStatusUp
+        </a>
+        </div>
+        <div class="flexColumn square" style="width:30%">
+           	<a href="https://twitter.com/intent/tweet?button_hashtag=McDIceCreamStatusUp&ref_src=twsrc%5Etfw"
+            class="twitter-hashtag-button" data-text="I think the Ice cream machine is up!"
+            data-url="http://logacream-developer-edition.na91.force.com" data-show-count="false">
+                #McDIceCreamStatusUp
+        	</a>
+        </div>
+    </div> 
+    </div>
+   <c:Footer /> 
+</apex:page>

@@ -1,0 +1,55 @@
+<apex:component controller="icController" >
+    <apex:stylesheet value="{!$Resource.icStyling}"/> 
+    
+    <style>
+        .columnn {
+        float: left;
+        padding: 10px;
+        }
+        
+        /* Create three unequal columns that floats next to each other */
+        .leftn, .rightn {
+        width: 15%;
+        }
+        
+        .middlen {
+        width: 50%;
+        }
+        
+        /* Clear floats after the columns */
+        .rown:after {
+        content: "";
+        display: table;
+        clear: both;
+        }
+    </style>
+    
+    <hr class="style18" />  <!-- Pretty Line -->
+    <div class="footer" style="justify-content:center text-align:center ">
+        <div class="rown">
+            
+            <!-- First Column of Footer -->
+            <div class="columnn leftn">
+                <apex:form > 
+                    <apex:commandLink action="{!toHome}" type="image/png">
+                        <apex:image title="Home" value="{!$Resource.HomeButton}" width="70px"/>
+                    </apex:commandlink>
+                </apex:form>  
+            </div>   
+            
+            <!-- Middle Column of Footer -->
+            <div class="columnn middlen miscText" style="color:white">
+                Follow us on Twitter @IceCheckApp!
+            </div>
+            
+            <!-- Third Column of Footer -->
+            <div class="columnn rightn">
+                <apex:form > 
+                    <apex:commandLink action="{!toSubmit}" type="image/png">
+                        <apex:image title="Suggest a Location" value="{!$Resource.NewLocationButton}" width="70px"/>
+                    </apex:commandlink>
+                </apex:form>  
+            </div>
+        </div>
+    </div>
+</apex:component>

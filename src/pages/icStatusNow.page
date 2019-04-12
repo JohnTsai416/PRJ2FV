@@ -1,0 +1,25 @@
+<apex:page controller="icController" lightningStylesheets="true" docType="html-5.0"
+           extensions="getStatusCtlrExtension">
+    <!-- <apex:stylesheet value="{!$Resource.icStyling}"/> -->
+    <div style="text-align:center">
+       <h1 style="display:inline-block">
+        <apex:outputText value="{!selectedLoc.LocationName__c}" />
+    </h1> <br />
+    <p style="display:inline-block">
+        <apex:outputText value="{!selectedLoc.street__c}" /> <br />
+        <apex:outputText value=" {!selectedLoc.city__c}" /> , <apex:outputText value=" {!selectedLoc.state__c}" /> 
+    </p>
+
+    <div>
+        <apex:form style="justify-content:center display:inline-block">  
+            <apex:selectRadio value="{!vote}" title="vote now " style="align-items:center justify-content:center vertical-align:center">
+                <apex:selectOptions value="{!voteOptions}"/>
+            </apex:selectRadio><p/> 
+            <apex:outputText title="Current Date and Time" value="{!NOW()}"/> <br />
+            <apex:commandButton action="{!submitNow}" value="Submit"/> 
+        </apex:form>   
+    </div> 
+    </div>
+    
+    <c:Footer />
+</apex:page>

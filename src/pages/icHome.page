@@ -1,0 +1,83 @@
+<apex:page controller="icController" lightningStylesheets="true" docType="html-5.0" extensions="icSOQLExtension" pageStyle="background-color:red">
+  
+    <h1>Is The McDonalds Ice Cream Machine Down???</h1>
+    <br />
+    
+    <style>
+.column {
+  float: left;
+  padding: 10px;
+}
+        
+/* Create three unequal columns that floats next to each other */
+.left, .right {
+  width: 30% !important;
+}
+
+.middle {
+  width: 35% !important;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+    <div class="row" >
+        
+        <!-- FIRST COLUMN - SEARCH BOX -->
+        <apex:form >
+            <!-- FIRST COLUMN -->
+            <div class="column left" >
+                <apex:pageBlock title="Enter City: " >
+                    <apex:pageBlockSection >
+                        <apex:inputText value="{!searchCity}" />
+                    </apex:pageBlockSection>
+                    <apex:pageBlockButtons location="bottom" >
+                        <apex:commandButton value="Search" action="{!searchInCity}" />
+                    </apex:pageBlockButtons>
+                </apex:pageBlock>
+            </div>
+            <br />
+            
+            
+            <!-- SECOND COLUMN - TABLE OF LOCATIONS -->
+            
+            <!-- {!if((selectedLocId == null), false, true)} -->
+            <div class="column middle">
+                <apex:pageBlock title="Choose a location" rendered="true">
+                    <apex:pageBlockSection >
+                        <apex:selectRadio value="{!selectedLocId}"  style="width:auto display:inline">
+                            <apex:selectOptions value="{!LocationOptions}" />
+                            <apex:actionSupport event="onclick" reRender="mapFrame" /> 
+                        </apex:selectRadio>   
+                    </apex:pageBlockSection>
+                </apex:pageBlock>
+            </div>
+            
+            <!-- THIRD COLUMN - CHOOSE LOCATION -->        
+            <div class="column right">
+                <apex:pageBlock rendered="true">
+                    <apex:pageBlockButtons location="bottom">
+                        <apex:commandButton value="Show on Map"/> <br />
+                        <apex:commandButton title="Choose this Location" value="Choose this location" action="{!toLocationDetails}" />
+                    </apex:pageBlockButtons>
+                </apex:pageBlock>
+            </div>
+            <!--    </apex:pageBlockTable> -->
+        </apex:form>
+    </div>  
+    
+    <!-- LINE BREAK -->
+    <br /> <redLine /> <goldLine /> <redLine /> <br />
+    
+    <!-- MAP-->
+    <div class="totalCenter">
+        <apex:iframe id="mapFrame" height="500" width="70%" frameborder="true" 
+                     src="apex/GeocodeLocation?id=a002E00000Z6OWQQA3" />    
+    </div>
+
+    <c:Footer />
+</apex:page>
